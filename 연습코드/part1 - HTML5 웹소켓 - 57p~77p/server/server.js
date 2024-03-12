@@ -1,3 +1,4 @@
+//server.js HTML 웹소켓 채팅
 const WebSocket = require("ws");
 
 //5001번 포트를 열고
