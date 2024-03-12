@@ -11,13 +11,13 @@ function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [msg, setMsg] = useState("");
   const [msgList, setMsgList] = useState([]);
-  // 1
+  // private하게 연결될 유저 선택
   const [privateTarget, setPrivateTarget] = useState("");
 
   useEffect(() => {
     if (!webSocket) return;
     function sMessageCallback(msg) {
-      // 2
+      // 2 타겟된 유저의 값에 따라서 private 할지 정함
       const { data, id, target } = msg;
       setMsgList((prev) => [
         ...prev,
