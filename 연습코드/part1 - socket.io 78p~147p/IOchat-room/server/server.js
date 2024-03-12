@@ -40,8 +40,11 @@ io.sockets.on("connection", (socket) => {
   //아래 코드가 있어야 상대방이 로그인할때 채팅방에 입장하였다라는걸 띄울수있음
   socket.on("login", (data) => {
     const { userId, roomNumber } = data;
-
+    // join()메소드는 클라이언트 소켓을 하나 이상의 방(room)에 참여시키는 데 사용함
     socket.join(roomNumber);
+
+    //방을 떠나고 싶으면 leave() 메소드를 사용할수있음
+    // socket.leave(roomNumber)
     clients.set(userId, socket.id);
     socket.broadcast.emit("sLogin", userId);
   });
