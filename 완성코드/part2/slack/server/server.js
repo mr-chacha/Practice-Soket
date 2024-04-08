@@ -14,7 +14,7 @@ mongoose
   .catch((err) => console.log(err));
 
 // 3
-const io = require("socket.io")(5000, {
+const io = require("socket.io")(5001, {
   cors: {
     origin: "http://localhost:3000",
   },
