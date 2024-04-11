@@ -1,9 +1,10 @@
 // 1 몽고디비 라이브러리랑 Schema를 불러옴
 const mongoose = require("mongoose");
 const Document = require("./Schema");
+require("dotenv").config();
 
-const uri = "MongoDB URL";
-
+const uri = process.env.NEXT_PUBLIC_MONGODB_URL;
+console.log("uri", uri);
 //strictQuery를 false로 둬야 몽고디비에 접속이 편하지만 실제 배포할거면 true로 해야함
 mongoose.set("strictQuery", false);
 mongoose
